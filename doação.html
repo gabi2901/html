@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu EcoBooks</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/global/menu e rodape.css">
+  <style>
+
+ 
+
+
+
+    /* SEÇÃO DE DOAÇÕES */
+    .secao-doacoes {
+      padding: 40px 60px;
+      
+    }
+
+    .secao-doacoes h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      
+    }
+
+    .livro-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+       margin-bottom: 40px;
+    }
+
+    .livro-item img {
+      margin-top: 30px;
+      width: 180px;
+      height: 260px;
+      cursor: pointer;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .livro-item p {
+      margin: 10px 0 6px;
+      font-size: 14px;
+      color: #333;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+    }
+
+    .livro-item button {
+      padding: 6px 20px;
+      border: 2px solid;
+      background-color: #ffa64d;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+
+    .livro-item button:hover {
+      background-color: #ff8000;
+      color: white;
+    }
+
+    
+    .secao-Troca {
+  margin-top: 30px; /* ou mais se necessário */
+  
+}
+
+.custom-busca,
+.btn-fechar-custom {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Comportamento em hover, foco (teclado/celular) e clique */
+
+.custom-busca:focus,
+.custom-busca:active,
+.btn-fechar-custom:focus,
+.btn-fechar-custom:active {
+  background-color: #ff8000 !important;
+  color: white !important;
+  border-color: #ff8000 !important;
+  outline: none;
+}
+
+
+
+@media (max-width: 576px) {
+  .secao-doacoes {
+    padding: 20px 15px;
+  }
+
+  .livro-item {
+    margin-bottom: 30px;
+  }
+
+  .livro-item p {
+    font-size: 13px;
+  }
+
+  .livro-item button {
+    padding: 5px 16px;
+    font-size: 14px;
+  }
+}
+
+  
+    
+    .btn-fechar-custom {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-fechar-custom:hover {
+  background-color: #ff8000;
+  color: white;
+  border-color: #ff8000;
+}
+    
+  </style>
+</head>
+<body>
+
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="w-100 px-4 d-flex flex-wrap justify-content-between align-items-center">
+      <a class="navbar-brand" href="doação.html" style="margin-right: 20px;">
+        <img src="assets/images/global/logo4.png.png" alt="Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-1" id="navbarNavDropdown">
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="doação.html">Troca</a></li>
+          <li class="nav-item"><a class="nav-link" href="doação.html">Doações</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastrolivroi.html">Cadastrar</a></li>
+          <li class="nav-item"><a class="nav-link" href="minhaestante.html">Minha Estante</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Gêneros</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Romance</a></li>
+              <li><a class="dropdown-item" href="#">Ficção Científica</a></li>
+              <li><a class="dropdown-item" href="#">Terror</a></li>
+              <li><a class="dropdown-item" href="#">Fantasia</a></li>
+              <li><a class="dropdown-item" href="#">Mistério</a></li>
+              <li><a class="dropdown-item" href="#">Aventura</a></li>
+              <li><a class="dropdown-item" href="#">Biografia</a></li>
+              <li><a class="dropdown-item" href="#">História</a></li>
+              <li><a class="dropdown-item" href="#">Poesia</a></li>
+              <li><a class="dropdown-item" href="#">Autoajuda</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="search-container me-auto">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" style="width: 300PX ;">
+            <button class="btn custom-busca" type="submit">Buscar</button>
+          </form>
+          <a href="index.perfil.html" class="nav-link"><i class="bi bi-person-circle" style="margin-left: 10px;"></i></a>
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+<main>
+    <!-- Conteúdo da página vai aqui -->
+ 
+  <!-- SEÇÃO DE DOAÇÕES -->
+  <section class="secao-doacoes">
+    <h2 class="text-center">Doações</h2>
+    <div class="row justify-content-center g-4">
+
+      <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="assets/images/pages/minhaestante/ocortico.png"
+       alt="O Cortiço"
+       class="livro-img"
+       data-titulo="Cortiço"
+       data-descricao="O Cortiço, de Aluísio Azevedo, é um romance naturalista que retrata a vida em um cortiço no Rio de Janeiro do século XIX..."
+       data-autor="Aluísio Azevedo">
+      <p>Cortiço - Aluísio Azevedo</p>
+     <button onclick="window.location.href='quererlivro.html'" class=" rounded-pill">
+  Quero
+</button>
+</div>
+
+  <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51XPxxkhoYL._SY445_SX342_.jpg"
+       alt="O beijo da neve"
+       class="livro-img"
+       data-titulo="O beijo da neve"
+       data-descricao="O beijo da neve é mais um emocionante romance de Babi A. Sette..."
+       data-autor=" babi a. sette">
+  <p>O beijo da neve -  Babi a. sette</p>
+  <button>Quero</button>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://http2.mlstatic.com/D_NQ_NP_577621-MLB20829942217_072016-O.webp"
+       alt="A Moreninha"
+       class="livro-img"
+       data-titulo="A Moreninha"
+       data-descricao="A Moreninha conta a história de Augusto, um jovem estudante que aposta com amigos que nunca se apaixonará de verdade..."
+       data-autor="Babi ">
+  <p>A Moreninha - Joaquim de Macedo</p>
+  <button>Quero</button>
+</div>
+
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51ceUACdbnL._SY445_SX342_.jpg"
+       alt="Memórias Póstumas de Brás Cubas"
+       class="livro-img"
+       data-titulo="Memórias Póstumas de Brás Cubas"
+       data-descricao="Memórias Póstumas de Brás Cubas, de Machado de Assis, é narrado por Brás Cubas, um defunto autor que conta sua vida após a morte..."
+       data-autor="Machado de Assis">
+  <p>Memórias Póstumas de Brás Cubas</p>
+  <button>Quero</button>
+</div>
+
+
+      <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51is1KDs5zL._SY445_SX342_.jpg"
+       alt="Todas as suas perfeições"
+       class="livro-img"
+       data-titulo="Todas as suas perfeições"
+       data-descricao="Todas as Suas Perfeições, de Colleen Hoover, é um romance que aborda os desafios do casamento e a luta contra a infertilidade. A história acompanha Quinn e Graham, 
+                    um casal que se conheceu de forma inusitada e construiu um relacionamento intenso..."
+       data-autor="Colleen Hoover">
+  <p>Todas as suas perfeições- Colleen Hoover </p>
+  <button>Quero</button>
+</div>
+
+  <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51Lt+IloUnL._SY445_SX342_.jpg"
+       alt="Emma"
+       class="livro-img"
+       data-titulo="Emma"
+       data-descricao="Emma, de Jane Austen, é um romance que segue a vida de Emma Woodhouse, uma jovem rica, bonita e inteligente que adora interferir na vida amorosa dos outros. 
+                    Convencida de que nunca se casará, ela se dedica a formar casais entre seus conhecidos, mas suas tentativas de casamenteira nem sempre dão certo..."
+       data-autor="Jane Austen">
+  <p>Emma-Jane Austen</p>
+  <button>Quero</button>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaEOe1s8V28DLgLW1nIipYgpG6M8FfnFkBJg&s"  
+                    class="card-img-top livro-img"
+       alt=" Charles bukowski"
+       class="livro-img"
+       data-titulo="Você  fica tão sozinho às vezes  que até faz sentido"
+       data-descricao="A Moreninha conta a história de Augusto, um jovem estudante que aposta com amigos que nunca se apaixonará de verdade..."
+       data-autor=" Charles bukowski">
+  <p>Você  fica tão sozinho às vezes  que até faz sentido- Charles bukowski</p>
+  <button>Quero</button>
+</div>
+
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/91qVTRzBNgL.jpg"
+       alt="A metamorfose"
+       class="livro-img"
+       data-titulo="A metamorfose"
+       data-descricao=" A obra narra a história de Gregor Samsa, um caixeiro-viajante que, certa manhã, acorda transformado em um inseto monstruoso..."
+       data-autor="Machado de Assis">
+  <p>A metamorfose - franz kafka</p>
+  <button>Quero</button>
+</div>
+    </div>   
+
+
+      <section class="secao-Troca">
+    <h2 class="text-center">Troca </h2>
+    <div class="row justify-content-center g-4">
+
+      <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51C3x1PrMCS._SY445_SX342_.jpg"
+       alt="Tudo o que mais queria"
+       class="livro-img"
+       data-titulo="Tudo o que mais queria"
+       data-descricao="O livro Tudo o que mais queria, de Tânia Martinelli, 
+                    conta a história de uma jovem chamada Clara, que,
+                    após a morte de seu pai, enfrenta um turbilhão de emoções e mudanças.
+                    Ela busca respostas sobre a vida e sobre os relacionamentos que a cercam..."
+       data-autor="Tânia Martinelli">
+  <p>Tudo o que mais queria-Tânia Martinelli</p>
+  <button>Quero</button>
+</div>
+
+  <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51f0EKySesL._SY445_SX342_.jpg"
+       alt="E eu não sou mulher? "
+       class="livro-img"
+       data-titulo=" E eu não sou mulher? "
+       data-descricao="E Eu Não Sou Mulher?, de bell hooks, é uma obra que aborda as questões de gênero, feminismo e identidade, 
+                    com foco na opressão enfrentada pelas mulheres negras..."
+       data-autor=" Bell hooks">
+  <p> E eu não sou mulher? -Bell hooks</p>
+  <button>Quero</button>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/81sNKwi74nL._SY385_.jpg"
+       alt=""
+       class="livro-img"
+       data-titulo="As areias do tempo"
+       data-descricao="As Areias do Tempo é um romance de Sidney Sheldon que mistura mistério, drama e romance, características típicas do autor.
+       A história segue duas gerações de mulheres fortes e determinadas, com uma trama que abrange várias décadas e locais do mundo..."
+       data-autor="Sidney Sheldon ">
+  <p>As areias do tempo-Sidney Sheldon</p>
+  <button>Quero</button>
+</div>
+
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/71xODQmqdhL._SY385_.jpg"
+       alt=""
+       class="livro-img"
+       data-titulo="apologia de Sócrates"
+       data-descricao="A Apologia de Sócrates é um diálogo de Platão que descreve a defesa de Sócrates durante seu julgamento em Atenas, 
+                    onde ele foi acusado de corromper a juventude e não acreditar nos deuses da cidade..."
+       data-autor=" Platão">
+  <p>apologia de Sócrates - Platão</p>
+  <button>Quero</button>
+</div>
+
+
+      <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51AHB+f-0DL._SY445_SX342_.jpg"
+       alt=""
+       class="livro-img"
+       data-titulo="Orgulho e preconceito"
+       data-descricao="Orgulho e Preconceito, de Jane Austen, é um romance sobre Elizabeth Bennet, uma jovem inteligente e independente, 
+                    e sua relação com o orgulhoso Sr. Darcy..."
+       data-autor="Jane Austen ">
+  <p>Orgulho e preconceito - Jane Austen </p>
+  <button>Quero</button>
+</div>
+
+  <div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/71r+BdkVWgL._SY342_.jpg"
+       alt=""
+       class="livro-img"
+       data-titulo="Brasil dos humilhado"
+       data-descricao="Brasil dos Humilhados, de Jessé Souza, analisa as profundas desigualdades sociais e políticas do Brasil, 
+                    mostrando como a elite mantém privilégios enquanto a maioria da população, especialmente os mais pobres, vive excluída das oportunidades..."
+       data-autor="Jessé Souza">
+  <p> Brasil dos humilhados - Jessé Souza</p>
+  <button>Quero</button>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51Pw06uU8FL._SY445_SX342_.jpg"  
+       alt=""
+       class="livro-img"
+       data-titulo="O poder do hábito"
+       data-descricao="O Poder do Hábito, de Charles Duhigg, explora como os hábitos funcionam e como podem ser transformados para melhorar nossa vida..."
+       data-autor="Charles Duhigg">
+  <p>O poder do hábito  -Charles Duhigg</p>
+  <button>Quero</button>
+</div>
+
+
+<div class="col-6 col-sm-4 col-md-3 livro-item">
+  <img src="https://m.media-amazon.com/images/I/51fMZPtkW+L._SY445_SX342_.jpg"
+       alt=""
+       class="livro-img"
+       data-titulo="Uma segunda chance"
+       data-descricao=" Uma Segunda Chance, de Colleen Hoover, segue a história de Emily e Gavin, que, após uma separação dolorosa, tentam lidar com os segredos
+        e tragédias do passado..."
+       data-autor="olleen Hooverki">
+  <p>Uma segunda chance - colleen Hooverki</p>
+  <button>Quero</button>
+</div>
+    </div> 
+
+
+  </section>
+
+
+
+  <div class="modal fade" id="livroModal" tabindex="-1" aria-labelledby="livroModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="livroModalLabel"></h5>
+      </div>
+      <div class="modal-body text-center">
+        <p id="livroModalDesc"></p>
+        <p id="livroModalAutor"></p>
+      </div>
+      <div class="modal-footer">
+        <button 
+  type="button" 
+  class="btn btn-fechar-custom" 
+  data-bs-dismiss="modal">
+  Fechar
+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const imagens = document.querySelectorAll(".livro-img");
+    const modal = new bootstrap.Modal(document.getElementById("livroModal"));
+
+    imagens.forEach(img => {
+      img.addEventListener("click", function() {
+        const titulo = img.getAttribute("data-titulo");
+        const descricao = img.getAttribute("data-descricao");
+        const autor = img.getAttribute("data-autor");
+
+        document.getElementById("livroModalLabel").textContent = titulo;
+        document.getElementById("livroModalDesc").textContent = descricao;
+        document.getElementById("livroModalAutor").textContent = "Autor: " + autor;
+
+        modal.show();
+      });
+    });
+  });
+</script>
+  
+
+
+ </main>
+
+  <!-- RODAPÉ -->
+  <footer class="mt-5 py-4" style="background-color: #FFF6E6;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+          <img src="assets/images/global/logo2.png" alt="" height="150">
+
+        </div>
+        <div class="col-md-6">
+          <h6 class="text-uppercase fw-bold" style="color: #ff6600;">MAPA DO SITE</h6>
+          <ul class="list-unstyled">
+            <li><a href="" class="text-decoration-none text-dark">Início</a></li>
+            <li><a href="#" class="text-decoration-none text-dark">Troca</a></li>
+            <li><a href="#" class="text-decoration-none text-dark">Doações</a></li>
+            <li><a href="cadastrolivroi.html" class="text-decoration-none text-dark">Cadastrar</a></li>
+            <li><a href="minhaestante.html" class="text-decoration-none text-dark">Minha estante</a></li>
+            <li><a href="sobrenos.html" class="text-decoration-none text-dark">Sobre Nós</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

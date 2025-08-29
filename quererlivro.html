@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu EcoBooks</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Seu CSS Global -->
+  <link rel="stylesheet" href="assets/css/global/menu e rodape.css" />
+
+  <style>
+  .btn-contato {
+  background-color: #ffa64d;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: bold; /* Negrito */
+  line-height: 2.5;
+  display: inline-block;
+  width: 400px; /* ou ajuste conforme seu gosto */
+  border: none;
+  margin-top: 30px; 
+  cursor: pointer;
+  border-radius: 50px;
+
+  /* Transição igual ao .custom-busca */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-contato:hover {
+  background-color: #ff8000; /* um tom um pouco mais escuro */
+  color: white;
+
+}
+
+
+
+
+    .livro-info img {
+      max-width: 160px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      background-color: #fff6e6;
+    }
+     
+    .container.py-4 {
+        padding-top: 60px !important; /* aumenta distância do topo */
+     }
+
+
+    .legenda {
+      font-size: 13px;
+      text-align: center;
+      margin-top: 10px;
+      color: #7f8c8d;
+    }
+
+    .bold {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid #eee;
+    }
+
+    @media (max-width: 576px) {
+      .livro-details {
+        text-align: center;
+      }
+
+      .search-container form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="w-100 px-4 d-flex flex-wrap justify-content-between align-items-center">
+      <a class="navbar-brand" href="doação.html" style="margin-right: 20px;">
+        <img src="assets/images/global/logo4.png.png" alt="Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-1" id="navbarNavDropdown">
+        
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="doação.html">Troca</a></li>
+          <li class="nav-item"><a class="nav-link" href="doação.html">Doações</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastrolivroi.html">Cadastrar</a></li>
+          <li class="nav-item"><a class="nav-link" href="minhaestante.html">Minha Estante</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Gêneros</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Romance</a></li>
+              <li><a class="dropdown-item" href="#">Ficção Científica</a></li>
+              <li><a class="dropdown-item" href="#">Terror</a></li>
+              <li><a class="dropdown-item" href="#">Fantasia</a></li>
+              <li><a class="dropdown-item" href="#">Mistério</a></li>
+              <li><a class="dropdown-item" href="#">Aventura</a></li>
+              <li><a class="dropdown-item" href="#">Biografia</a></li>
+              <li><a class="dropdown-item" href="#">História</a></li>
+              <li><a class="dropdown-item" href="#">Poesia</a></li>
+              <li><a class="dropdown-item" href="#">Autoajuda</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="search-container me-auto">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" style="width: 300PX ;">
+            <button class="btn custom-busca" type="submit">Buscar</button>
+          </form>
+          <a href="index.perfil.html" class="nav-link"><i class="bi bi-person-circle" style="margin-left: 10px;"></i></a>
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+  <div class="container py-4">
+  <div class="row g-4 align-items-start">
+    <!-- Coluna da imagem -->
+    <div class="col-md-4 text-center">
+      <div class="livro-info">
+        <img src="assets/images/pages/minhaestante/ocortico.png" alt="Capa do livro O Cortiço" class="img-fluid">
+      </div>
+    </div>
+
+    <div class="col-md-8 d-flex justify-content-start align-items-start">
+  <table class="table table-bordered w-100" style="max-width: 650px; background-color: #fff;">
+    <thead class="table-light">
+      <tr>
+        <th colspan="4" class="text-center">O Cortiço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Autor</th>
+        <td>Aluísio de Azevedo</td>
+        <th>Gênero</th>
+        <td>Romance naturalista</td>
+      </tr>
+      <tr>
+        <th>Páginas</th>
+        <td>223</td>
+        <th>Edição</th>
+        <td>Primeira edição</td>
+      </tr>
+      <tr>
+        <th>Ano edição</th>
+        <td>1890</td>
+        <th>Destino</th>
+        <td>Doação</td>
+      </tr>
+      <tr>
+        <th>Estado</th>
+        <td>Em excelente estado</td>
+        <th>Cadastrado por</th>
+        <td>Kallyny Victória</td>
+      </tr>
+      <tr>
+        <th>Cadastrado em</th>
+        <td>12/06/2024</td>
+        <th>Cidade</th>
+        <td>Petrolina-PE</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <div class="text-center mb-5">
+      <div class="col-12 col-md-8 offset-md-2">
+        <button class="btn-contato">Entrar em contato</button>
+        <p class="legenda">Clique no <span class="bold">BOTÃO ACIMA</span> para conversar com o proprietário do livro.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

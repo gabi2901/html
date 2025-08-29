@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar livro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container-custom {
+      max-width: 1000px;
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .titulo {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #ffb87c;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    .form-control {
+      border-radius: 20px;
+      padding: 12px 20px;
+    }
+
+    .form-check-input {
+      transform: scale(1.2);
+      margin-top: 0.35rem;
+    }
+
+ .custom-btn {
+  background-color: #ffa64d;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: bold; /* Negrito */
+  line-height: 2.5;
+  display: inline-block;
+  width: 400px; /* ou ajuste conforme seu gosto */
+  border: none;
+  margin-top: 30px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+    .custom-btn:hover {
+      background-color: #ff8000;
+      color: white;
+    
+    }
+
+    .text-center img {
+      max-width: 180px;
+    }
+
+    /* Modal ajustes */
+    .modal-content img.check {
+  width: 200px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+    .modal-content h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+  
+  .modal-content a.custom-btn {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  text-align: center;
+   line-height:1;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container container-custom">
+    <form>
+   <form>
+  <h1 class="titulo">Cadastrar livro</h1>
+
+  <div class="text-center mb-4">
+    <img src="assets/images/pages/cadastrolivroi/imagemfoto.png" class="img-fluid rounded mb-2" alt="Adicionar foto" />
+    <p>Adicione a foto do livro</p>
+  </div>
+
+  <!-- TODOS OS CAMPOS AGORA EM UMA ÚNICA COLUNA -->
+  <div class="row g-3">
+    <div class="col-12">
+      <label for="tituloLivro" class="form-label">Título do livro*</label>
+      <input type="text" class="form-control" id="tituloLivro" placeholder="Digite aqui..." />
+    </div>
+
+    <div class="col-12">
+      <label for="autorLivro" class="form-label">Autor*</label>
+      <input type="text" class="form-control" id="autorLivro" placeholder="Digite aqui..." />
+    </div>
+
+    <div class="col-12">
+      <label for="generoLivro" class="form-label">Gênero*</label>
+      <input type="text" class="form-control" id="generoLivro" placeholder="Digite aqui..." />
+    </div>
+
+    <div class="col-12">
+      <label for="anoEdicao" class="form-label">Ano de edição*</label>
+      <input 
+        type="number" 
+        class="form-control" 
+        id="anoEdicao" 
+        placeholder="Digite aqui..." 
+        min="1000" 
+        step="1"
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="edicaoLivro" class="form-label">Edição*</label>
+      <input type="text" class="form-control" id="edicaoLivro" placeholder="Digite aqui..." />
+    </div>
+
+    <div class="col-12">
+      <label for="numeroPaginas" class="form-label">Número de páginas*</label>
+      <input type="number" class="form-control" id="numeroPaginas" placeholder="Digite aqui..." />
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <label class="form-label">Estado do livro*</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="estadoLivro" id="estadoExcelente" />
+      <label class="form-check-label" for="estadoExcelente">Em excelente estado</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="estadoLivro" id="estadoLevementeUsado" checked />
+      <label class="form-check-label" for="estadoLevementeUsado">Levemente usado</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="estadoLivro" id="estadoParcialmenteDanificado" />
+      <label class="form-check-label" for="estadoParcialmenteDanificado">Parcialmente danificado</label>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <label class="form-label">Destino do livro*</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="destinoLivro" id="destinoTroca" />
+      <label class="form-check-label" for="destinoTroca">Troca</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="destinoLivro" id="destinoDoacao" checked />
+      <label class="form-check-label" for="destinoDoacao">Doação</label>
+    </div>
+  </div>
+
+  <p class="mt-4"><strong>* Preenchimento obrigatório</strong></p>
+
+  <div class="text-center mt-4">
+  <button type="submit" class="custom-btn rounded-pill" id="myBtn">Cadastrar</button>
+</div>
+
+</form>
+  
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <!-- Conteúdo será inserido via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var btn = document.getElementById("myBtn");
+    var modal = new bootstrap.Modal(document.getElementById("myModal"));
+
+    btn.onclick = function (event) {
+      event.preventDefault();
+
+      const modalContent = `
+        <img class="check" src="assets/images/pages/cadastrolivroi/check.png" alt="Check" />
+        <h2>Livro cadastrado com sucesso!</h2>
+        <p>Certifique-se de que o livro está em sua estante.</p>
+        <a href="doação.html" class=" custom-btn rounded-pill mt-2">Fechar</a>
+      `;
+
+      document.querySelector("#myModal .modal-content").innerHTML = modalContent;
+      modal.show();
+    };
+  </script>
+
+  <script>
+  // Define o ano atual e ajusta o max do input dinamicamente
+  const anoAtual = new Date().getFullYear();
+  const inputAno = document.getElementById('anoEdicao');
+  inputAno.max = anoAtual;
+</script>
+
+</body>
+</html>

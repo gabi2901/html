@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Perfil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .bg-custom-orange {
+            background-color: #FFB87C !important;
+            transition: all 0.3s;
+        }
+        .bg-custom-orange:hover {
+            background-color: #ffa64d !important;
+        }
+        .bg-custom-orange:active {
+            background-color: #ff8000 !important;
+            transform: scale(0.98);
+        }
+        .profile-img-card img {
+            filter: grayscale(100%);
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; 
+            transition: all 0.3s;
+        }
+       
+.btn-my-books:hover {
+    background-color: #ffa64d00 !important;
+    color: rgb(0, 0, 0) !important;
+    border-color: #00000000 !important;
+}
+
+.btn-my-books:active {
+    background-color: #00000000 !important;
+    border-color: #00000000 !important;
+}
+.btn-delete-profile{
+ background-color: #ffa64d;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: bold; /* Negrito */
+  line-height: 2.5;
+  display: inline-block;
+  width: 400px; /* ou ajuste conforme seu gosto */
+  border: none;
+  margin-top: 30px; 
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.1s, color 0.1s, border-color 0.0s;
+}
+
+.btn-delete-profile:hover {
+  background-color: #ff8000; /* um tom um pouco mais escuro */
+ 
+
+}
+
+        #change-photo, #remove-photo, #add-photo {
+            background: none;
+            border: none;
+            color: #5b60f1;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0;
+            padding: 0.1rem 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        #remove-photo {
+            color: #dc3545;
+        }
+        .photo-actions {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 0;
+        }
+        .text-warning {
+            color: #FFB87C !important;
+        }
+        .has-photo {
+            filter: none !important;
+        }
+        .profile-img-card {
+            margin-bottom: 10px;
+        }
+        .photo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn-delete-profile {
+  background-color: #ffa64d;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: bold; /* Negrito */
+  line-height: 2.5;
+  display: inline-block;
+  width: 400px; /* ou ajuste conforme seu gosto */
+  border: none;
+  margin-top: 30px; 
+  cursor: pointer;
+  border-radius: 50px;
+
+  /* Transição igual ao .custom-busca */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <div class="profile-container bg-light p-4 rounded shadow mx-auto" style="max-width: 500px;">
+      <div class="text-center mb-4">
+        <div class="profile-img-card mb-2">
+          <label for="file-input" class="d-block">
+            <img src="assets/images/pages/index.perfil/Vector.png" alt="Foto de Perfil" id="profile-img">
+          </label>
+          <input type="file" accept="image/*" class="d-none" id="file-input">
+        </div>
+        <button id="add-photo" class="btn-photo">Adicionar Foto</button>
+        <div class="photo-actions" id="photo-actions">
+          <button id="change-photo" class="btn-photo">Alterar Foto</button>
+          <button id="remove-photo" class="btn-photo btn-remove">Excluir Foto</button>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <p><strong>Nome:</strong><br> Kallyny Victória de Souza Amorin</p>
+        <p><strong>Email:</strong><br> kallynyvictoria704@gmail.com</p>
+        <p><strong>Cidade-UF:</strong><br> Petrolina-PE <i class="fas fa-map-marker-alt"></i></p>
+      </div>
+
+      <a href="minhaestante.html" class="btn btn-outline-dark btn-my-books w-100 mt-3 d-flex justify-content-between align-items-center">
+  <span>Minha estante</span> <i class="fas fa-chevron-right"></i>
+</a>
+ <div class="text-center mb-5">
+      <button class="btn-delete-profile" id="delete-profile">Excluir perfil</button>
+    </div>
+  </div>
+
+  <script>
+    const defaultImage = "assets/images/pages/index.perfil/Vector.png";
+    const profileImg = document.getElementById("profile-img");
+    const fileInput = document.getElementById("file-input");
+    const addPhotoBtn = document.getElementById("add-photo");
+    const photoActions = document.getElementById("photo-actions");
+    const changePhotoBtn = document.getElementById("change-photo");
+    const removePhotoBtn = document.getElementById("remove-photo");
+
+    function openFilePicker() {
+      fileInput.value = '';
+      fileInput.click();
+    }
+
+    function resetToDefaultImage() {
+      profileImg.src = defaultImage;
+      profileImg.classList.remove("has-photo");
+      addPhotoBtn.style.display = "block";
+      photoActions.style.display = "none";
+    }
+
+    fileInput.addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          profileImg.src = e.target.result;
+          profileImg.classList.add("has-photo");
+          addPhotoBtn.style.display = "none";
+          photoActions.style.display = "flex";
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    addPhotoBtn.addEventListener("click", openFilePicker);
+    changePhotoBtn.addEventListener("click", openFilePicker);
+
+    removePhotoBtn.addEventListener("click", function() {
+      if (confirm("Tem certeza que deseja excluir esta foto?")) {
+        resetToDefaultImage();
+      }
+    });
+
+    document.getElementById("delete-profile").addEventListener("click", function() {
+      if (confirm("Tem certeza que deseja excluir seu perfil permanentemente?")) {
+        alert("Perfil excluído com sucesso!");
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html> 
